@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Display from './components/Display';
+import Dashboard from './components/Dashboard';
 
 class App extends React.Component {
   state = {
@@ -9,21 +11,14 @@ class App extends React.Component {
     fouls: 0
   }
   render(){
-  return (
-    <div className="App">
-      <div>
-        <div>Balls: {this.state.balls}</div>
-        <div>Strikes: {this.state.strikes}</div>
+   return (
+      <div className="App">
+        <Display balls = {this.state.balls} strikes = {this.state.strikes} fouls = {this.state.fouls} />
+        <Dashboard hit = {this.hit} strike = {this.strike} ball = {this.ball} foul = {this.foul} />
       </div>
+        
+   )
 
-      <div>
-        <button onClick = {this.strike}>Strike</button>
-        <button onClick = {this.ball}>Ball</button>
-        <button onClick = {this.foul}>Foul</button>
-        <button onClick = {this.hit}>Hit</button>
-      </div>
-    </div>
-  );
 
   }
 
